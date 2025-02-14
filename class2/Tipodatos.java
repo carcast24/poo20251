@@ -1,6 +1,7 @@
 public class Tipodatos {
     public static void main(String[] args) {
         //Tipos de datos
+        
         long telefono = 3052859085L; // entero extenso
         int Edad = 25; //Enteros simple
         double altura = 1.75; // dato de tipo Real (double y float)
