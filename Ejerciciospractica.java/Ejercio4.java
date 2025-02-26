@@ -14,7 +14,7 @@ public class Ejercio4 {
         edad1 [2] = 17;
         edad1 [3] = 13;
         edad1 [4] = 10;
-        
+
         int[] edad2 = new int[5];
         Random random = new Random(); // objeto random para llamar sus metodos
 
@@ -24,6 +24,30 @@ public class Ejercio4 {
 
         System.out.println(Arrays.toString(edad1)); // imprimo arreglos para ver sus cambios
         System.out.println(Arrays.toString(edad2));
+
+        // Encontrar el mayor en el primer arreglo
+        int mayorEdad1 = edad1[0];
+        for (int i = 1; i < edad1.length; ++i) {
+            if (edad1[i] > mayorEdad1) {
+                mayorEdad1 = edad1[i];
+            }
+        }
+
+        // Encontrar el mayor en el segundo arreglo
+        int mayorEdad2 = edad2[0];
+        for (int i = 1; i < edad2.length; ++i) {
+            if (edad2[i] > mayorEdad2) {
+                mayorEdad2 = edad2[i];
+            }
+        }
+
+        // Encontrar el mayor entre los dos arreglos
+        int mayor = (mayorEdad1 > mayorEdad2) ? mayorEdad1 : mayorEdad2;
+
+        // Imprimir el número mayor
+        System.out.println("Mayor en Array 1: " + mayorEdad1);
+        System.out.println("Mayor en Array 2: " + mayorEdad2);
+        System.out.println("la edad mayor entre los dos grupos es: " + mayor);
 
         
 
