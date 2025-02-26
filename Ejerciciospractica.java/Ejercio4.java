@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.Random;
 
 public class Ejercio4 {
     public static void main(String[] args) {
@@ -14,6 +15,8 @@ public class Ejercio4 {
         edad1 [3] = 13;
         edad1 [4] = 10;
         int[] edad2 = new int[5];
+        Random random = new Random(); // objeto random para llamar sus metodos
+
         System.out.println(Arrays.toString(edad1)); // imprimo arreglos para ver sus cambios
         System.out.println(Arrays.toString(edad2));
 
