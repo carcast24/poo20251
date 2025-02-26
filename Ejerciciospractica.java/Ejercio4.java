@@ -14,8 +14,13 @@ public class Ejercio4 {
         edad1 [2] = 17;
         edad1 [3] = 13;
         edad1 [4] = 10;
+        
         int[] edad2 = new int[5];
         Random random = new Random(); // objeto random para llamar sus metodos
+
+        for(int i = 0 ; i < edad2.length; ++i ){
+            edad2[i] = random.nextInt(71) + 10;
+        }
 
         System.out.println(Arrays.toString(edad1)); // imprimo arreglos para ver sus cambios
         System.out.println(Arrays.toString(edad2));
