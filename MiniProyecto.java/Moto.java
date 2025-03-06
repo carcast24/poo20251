@@ -19,5 +19,7 @@ public class Moto {
     }
     public short gethoraIngreso(){
         return horaIngreso;
+
     }
 }
+
