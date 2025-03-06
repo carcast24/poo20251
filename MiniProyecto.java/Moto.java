@@ -9,4 +9,15 @@ public class Moto {
         this.horaIngreso = horaIngreso;
 
     }
+
+    public String getplaca(){
+        return placa;
+    }
+    public int getcilindrada (){
+        return cilindrada;
+
+    }
+    public short gethoraIngreso(){
+        return horaIngreso;
+    }
 }
