@@ -9,4 +9,6 @@ public class Puesto {
         this.moto = null; // mismo caso que con el boolean, inicialmente esta vacio
     }
 
+    
+
 }
