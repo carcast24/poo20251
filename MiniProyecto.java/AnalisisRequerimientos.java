@@ -4,8 +4,9 @@
  * Cobrar tarifas segun el tiempo de parqueo
  * Mostrar la disponibilidad de puestos
  * No generar errores de asignacion doble 
- * 
- * Clases principales
+ */
+//_____________________________________________________________
+/*Clases principales
 Moto → Representa una moto con:
 
 Placa
@@ -26,6 +27,4 @@ Tarifador → Calcular el cobro:
 30 minutos gratis.
 31-60 minutos: $800.
 Más de 60 min: $2000.
-Principal → Controla la ejecución y menú de usuario.
- * 
- */
+Principal → Controla la ejecución y menú de usuario.*/
