@@ -34,7 +34,31 @@ public class Tarifador{
 
         do {
             System.out.println("----------- Menu Principal ----------");
-        }
+            System.out.println("1. Registrar Moto");
+            System.out.println("2. Cobro de Tarifa");
+            System.out.println("3. Mostrar Estado del Parqueadero");
+            System.out.println("4. Salir");
+            System.out.println("Seleccione una opccion");
+            opcion = sc.nextInt();
+            switch (opcion){
+                case 1:
+                    registrarMoto:(sc,motosBajocc,motosAltocc);
+                    break;
+                case 2:
+                    cobrarTarifa:(sc,motosBajocc,motosAltocc);
+                    break;
+                case 3:
+                    mostrarParqueadero:(motosBajocc,motosAltocc);
+                    break;
+                case 4:
+                    System.out.println("saliendo del programa...");
+                    break;
+                default: // opcion por defecto que advierte al usuario que ingreso un parametro no registrado
+                    System.out.println("opcion invalida, por favor ingrese una opcion de la lista");
+
+            }
+
+        } while (opcion !=4); // cuando la opcion sea diferente a 4 el bucle se repite de lo contrario da por terminado la iteracion
 
 
 
