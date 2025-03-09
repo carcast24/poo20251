@@ -74,8 +74,19 @@ public class Tarifador {
         int tipo = sc.nextInt();
 
         // se solicita hora de entrada
-        System.out.println("ingresa la hora de entrada: ");
-        int horaEntrada = sc.nextInt();
+        System.out.println("ingresa la hora de entrada (formato HH:MM) ");
+        sc.nextLine();
+        String horaEntradaStr = sc.nextLine(); // leer la línea completa, por ejemplo "07:30"
+
+        // Partimos la cadena en dos
+        String[] partes = horaEntradaStr.split(":"); // ["07", "30"]
+
+        // Convertimos a enteros
+        int hora = Integer.parseInt(partes[0]);    // 7
+        int minutos = Integer.parseInt(partes[1]); // 30
+
+        // Si quieres manejarlo todo en "minutos desde medianoche"
+        int horaEntrada = hora * 60 + minutos; // 7*60 + 30 = 450
 
         if (tipo == 1) {
             int puesto = buscarPuestoLibre(bajo);
@@ -122,7 +133,7 @@ public class Tarifador {
 
         int puesto;
         if (tipo == 1) {
-            mostrarParqueadero(bajo, "bajo cilindraje");
+            mostrarEstadoParqueadero(bajo, "bajo cilindraje");
             System.out.println("ingrese el numero del puesto a liberar: ");
             puesto = sc.nextInt() - 1;
             if (puesto < 0 || puesto >= bajo.length || bajo[puesto] == 0) {  // se esta  validando que el puesto ingresado es invalido o libre
@@ -141,7 +152,7 @@ public class Tarifador {
             bajo[puesto] = 0;
 
         } else if (tipo == 2) {
-            mostrarPaequeadero(alto, "alto cilindraje");
+            mostrarEstadoParqueadero(alto,"alto cilindraje");
             System.out.print("Ingrese el número del puesto a liberar: ");
             puesto = sc.nextInt() - 1;
             if (puesto < 0 || puesto >= alto.length || alto[puesto] == 0) {
@@ -184,7 +195,7 @@ public class Tarifador {
     public static void mostrarEstadoParqueadero(int[] arreglo, String tipo) {
         System.out.println("Puestos (" + tipo + "):");
         for (int i = 0; i < arreglo.length; i++) {
-            String estado = (arreglo[i] == -1) ? "Libre" : "Ocupado (hora entrada: " + arreglo[i] + ")";
+            String estado = (arreglo[i] == 0) ? "Libre" : "Ocupado (hora entrada: " + arreglo[i] + ")";
             System.out.println("Puesto " + (i + 1) + ": " + estado);
         }
     }
