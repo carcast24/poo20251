@@ -2,9 +2,11 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class Tarifador{
+    Scanner sc = new Scanner(System.in);
+
     public static void  main (String[] args){
         //invoco la clase scanner, me permite que el usuario ingrese datos al programa
-        Scanner sc = new Scanner(System.in);
+
 
         // creamos e inicializamos los Arrays como lo solicitado.
         // 0 = puesto libre y 1 = puesto ocupado
@@ -59,8 +61,44 @@ public class Tarifador{
             }
 
         } while (opcion !=4); // cuando la opcion sea diferente a 4 el bucle se repite de lo contrario da por terminado la iteracion
-
-
+        sc.close(); // se cierra el sccanner,
 
     }
-}
+    // creo los metodos para las opcciones creadas en el switch
+
+    public static void registrarMoto(Scanner sc, int[] bajo, int[] alto) {
+        System.out.println("---- Registrar Moto ----");
+        System.out.println("seleccione el tipo de moto");
+        System.out.println("1. moto  con cilindraje menor a 400cc");
+        System.out.println("2. moto con cilindraje mayor a 400cc");
+        int tipo = sc.nextInt();
+
+        // se solicita hora de entrada
+        System.out.println("ingresa la hora de entrada: ");
+        int horaEntrada = sc.nextInt();
+
+        if (tipo == 1) {
+            int puesto = buscarPuestoLibre(bajo);
+            if (puesto == -1) {
+                System.out.println("No hay puestos disponibles para motos de bajo cilindraje");
+            } else {
+                bajo[puesto] = horaEntrada;
+                System.out.println("Moto registrada en puesto" + (puesto + 1) + "de motos de bajo cilindraje");
+            }
+        } else if (tipo == 2) {
+            int puesto = buscarPuestoLibre(alto);
+            if (puesto == -1) {
+                System.out.println("No hay puestos disponibles para motos de alto cilindraje");
+
+            } else {
+                alto[puesto] = horaEntrada;
+                System.out.println("Moto registrada en puesto" + (puesto + 1) + "de motos de alto cilindraje");
+            }
+
+        } else {
+            System.out.println("Tipo de moto invalida");
+        }
+    }
+
+    // metodo para encontrar el primer espacio libre
+
