@@ -14,15 +14,27 @@ public class Tarifador{
 
         // inicializamos en 0
 
-        for (int i = 0; i < motosBajocc.length; ++i) {
+       /* for (int i = 0; i < motosBajocc.length; ++i) {
             motosBajocc[i]= 0;
         }
         for (int i = 0; i < motosAltocc.length; ++i);{
             motosAltocc[i] = 0;
-        }
-
+        }*/
+        /**
+         * quito las lineas de la 17 a la 22 ya que es reduntante inicializar en cero
+         * un arreglo, ya que automaticamente se inicializa en scalar neutro
+         *
+         */
+        // visualizamos el array
         System.out.println(Arrays.toString(motosAltocc));
         System.out.println(Arrays.toString(motosBajocc));
+
+        int opcion; // vaariable que me permite almacenar la respuesta del usuario
+        // usamos bucle do while, me permite ejecutar una lista mientras una condicion no se cumpla.
+
+        do {
+            System.out.println("----------- Menu Principal ----------");
+        }
 
 
 
