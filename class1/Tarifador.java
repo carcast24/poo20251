@@ -159,6 +159,7 @@ public class Tarifador {
         }
 
     }
+
     // metodo para calcular la tarifa
     public static int calcularTarifa(int tiempo) {
         if (tiempo <= 30) {
@@ -169,6 +170,23 @@ public class Tarifador {
             return 2000;
         }
     }
-}
 
+    // metodo para mostrar el estado del parqueadero
+    public static void mostrarParqueadero(int[] bajo, int[] alto) {
+        System.out.println("--- Estado del Parqueadero ---");
+        System.out.println("Motos de bajo cilindraje:");
+        mostrarEstadoParqueadero(bajo, "bajo cilindraje");
+        System.out.println("Motos de alto cilindraje:");
+        mostrarEstadoParqueadero(alto, "alto cilindraje");
+    }
+
+    // metodo para mostrar el array de los puestos
+    public static void mostrarEstadoParqueadero(int[] arreglo, String tipo) {
+        System.out.println("Puestos (" + tipo + "):");
+        for (int i = 0; i < arreglo.length; i++) {
+            String estado = (arreglo[i] == -1) ? "Libre" : "Ocupado (hora entrada: " + arreglo[i] + ")";
+            System.out.println("Puesto " + (i + 1) + ": " + estado);
+        }
+    }
+}
 
