@@ -1,10 +1,10 @@
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class Tarifador{
+public class Tarifador {
     Scanner sc = new Scanner(System.in);
 
-    public static void  main (String[] args){
+    public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);//invoco la clase scanner, me permite que el usuario ingrese datos al programa
 
 
@@ -42,15 +42,15 @@ public class Tarifador{
             System.out.println("4. Salir");
             System.out.println("Seleccione una opccion");
             opcion = sc.nextInt();
-            switch (opcion){
+            switch (opcion) {
                 case 1:
-                    registrarMoto(sc,motosBajocc,motosAltocc);
+                    registrarMoto(sc, motosBajocc, motosAltocc);
                     break;
                 case 2:
-                    cobrarTarifa(sc,motosBajocc,motosAltocc);
+                    cobrarTarifa(sc, motosBajocc, motosAltocc);
                     break;
                 case 3:
-                    mostrarParqueadero(motosBajocc,motosAltocc);
+                    mostrarParqueadero(motosBajocc, motosAltocc);
                     break;
                 case 4:
                     System.out.println("saliendo del programa...");
@@ -60,7 +60,7 @@ public class Tarifador{
 
             }
 
-        } while (opcion !=4); // cuando la opcion sea diferente a 4 el bucle se repite de lo contrario da por terminado la iteracion
+        } while (opcion != 4); // cuando la opcion sea diferente a 4 el bucle se repite de lo contrario da por terminado la iteracion
         sc.close(); // se cierra el sccanner,
 
     }
@@ -110,22 +110,22 @@ public class Tarifador{
         return -1;
     }
 
-/**
- * metodo para cobrar la tarifa y liberar el espacio
- */
-    public static void cobrarTarifa(Scanner sc, int [] bajo, int [] alto){
+    /**
+     * metodo para cobrar la tarifa y liberar el espacio
+     */
+    public static void cobrarTarifa(Scanner sc, int[] bajo, int[] alto) {
         System.out.println("---- Cobro de Tarifa ----");
         System.out.println("Seleccione el tipo de moto");
         System.out.println("1. moto de bajo cilindraje");
         System.out.println("2. moto de bajo cilindraje");
-        int tipo =sc.nextInt();
+        int tipo = sc.nextInt();
 
         int puesto;
-        if (tipo == 1){
+        if (tipo == 1) {
             mostrarParqueadero(bajo, "bajo cilindraje");
             System.out.println("ingrese el numero del puesto a liberar: ");
             puesto = sc.nextInt() - 1;
-            if (puesto < 0 || puesto >= bajo.length || bajo[puesto] == 0 ){  // se esta  validando que el puesto ingresado es invalido o libre
+            if (puesto < 0 || puesto >= bajo.length || bajo[puesto] == 0) {  // se esta  validando que el puesto ingresado es invalido o libre
                 System.out.println("Puesto invalido o ya esta libre");
                 return;
 
@@ -158,6 +158,16 @@ public class Tarifador{
             System.out.println("Tipo de moto inválido.");
         }
 
+    }
+    // metodo para calcular la tarifa
+    public static int calcularTarifa(int tiempo) {
+        if (tiempo <= 30) {
+            return 0;
+        } else if (tiempo <= 60) {
+            return 800;
+        } else {
+            return 2000;
+        }
     }
 }
 
