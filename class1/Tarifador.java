@@ -1,8 +1,7 @@
 import java.util.Arrays;
-import java.util.Scanner;
+import java.util.Scanner; // permite que el usuario ingrese datos al codigo
 
 public class Tarifador {
-    Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);//invoco la clase scanner, me permite que el usuario ingrese datos al programa
@@ -200,4 +199,5 @@ public class Tarifador {
         }
     }
 }
+
 
