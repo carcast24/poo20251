@@ -20,6 +20,9 @@ public class Trabajador{
     public int getIdTrabajador(){
         return idTrabajador;
     }
+    public String getApellido(){
+        return apellido;
+    }
     public double pagar(){
         return 0.0;
     }
