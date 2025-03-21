@@ -4,7 +4,7 @@ public class Operario extends Trabajador {
     public final double SALARIO_BASE = 100.0; // constante
 
     //constructor --> hereda de la super clase nombre idTrabajador, apellido
-    public Operario(double Horas, int idTrabajador, String nombre, String apellido) {
+    public Operario( int idTrabajador, String nombre, String apellido, double horas) {
         super(idTrabajador, nombre, apellido);
         this.horas = horas;
     }
@@ -15,10 +15,10 @@ public class Operario extends Trabajador {
 
 
     public String toString() {
-        return " Operario {idTrabajador: " + super.getIdTrabajador() +
-                "Nombre: " + super.getNombre() +
-                "Apellido: " + super.getApellido() +
-                "Horas la boradas: " + horas + "}";
+        return " Operario {idTrabajador:  " + super.getIdTrabajador() +
+                "Nombre:  " + super.getNombre() +
+                "Apellido:  " + super.getApellido() +
+                "Horas la boradas:  " + horas + "}";
 
     }
 

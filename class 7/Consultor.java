@@ -20,7 +20,7 @@ public class Consultor extends Trabajador {
         return " Consultor {idTrabajador: " + super.getIdTrabajador() +
                 "Nombre: " + super.getNombre() +
                 "Apellido: " + super.getApellido() +
-                "Horas la boradas: " + horas + "}";
+                "Comsion obtenida: " + comision + "}";
 
     }
 
